@@ -1,0 +1,11 @@
+<div ng-controller="question_controller">
+    <div ng-controller="answer_controller">
+        <p><a href="#!/dash">Home</a> | <a href="#!/show_question/{{ question._id }}">Back To Question</a> | <a href="/logout">Log Out</a></p>
+        <h3>{{ question.content }}</h3>
+        <p>{{ question.desc }}</p>
+        <p><input type="text" ng-model="new_answer.content" placeholder="Answer"></p>
+        <p><input type="text" ng-model="new_answer.details" placeholder="Details"></p>
+        <button ng-click="add_answer(question._id)">Submit</button>
+        <a href='#!/dash'><button>Cancel</button></a>
+    </div>
+</div>

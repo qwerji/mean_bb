@@ -1,0 +1,17 @@
+<div ng-controller="question_controller">
+    <h3>Hi, {{ curr_user.name }}!</h3>
+    <p><a href="#!/new_question">Add A Question</a> | <a href="/logout">Log Out</a></p>
+    <input ng-model="search.content" type="text" placeholder="Search">
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Answers</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="question in questions | filter: search track by $index">
+            <td>{{ question.content }}</td>
+            <td>{{ question._answers.length }}</td>
+            <td><a href="#!/show_question/{{ question._id }}">Show</a> | <a href="#!/new_answer/{{ question._id }}">Answer</a></td>
+        </tr>
+    </table>
+</div>
