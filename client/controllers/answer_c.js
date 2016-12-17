@@ -1,4 +1,4 @@
-app.controller('answer_controller', function($scope, answer_factory, $location, $route) {
+app.controller('answer_controller', function($scope, answer_factory, question_factory, $location, $routeParams) {
     $scope.add_answer = function(q_id) {
         if (!$scope.new_answer || !$scope.new_answer.content) {
             alert('Please enter an answer.')
@@ -15,7 +15,9 @@ app.controller('answer_controller', function($scope, answer_factory, $location, 
     }
     $scope.like = function(id) {
         answer_factory.like(id, function() {
-            $route.reload()
+            question_factory.get_question($routeParams, function(question) {
+                $scope.question = question;
+            })
         })
     }
 })

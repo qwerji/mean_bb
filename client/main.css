@@ -1,0 +1,45 @@
+main, h2 {
+    margin-left: 20px;
+}
+
+th {
+    width: 40%;
+}
+
+table {
+    width: 65%;
+}
+
+/* Animations */
+
+main.ng-enter {
+    transition: 0.5s linear all;
+    opacity: 0;
+}
+main.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+button {
+    color: black;
+}
+
+.dash-q.ng-enter {
+    transition: 0.5s linear all;
+    opacity: 0;
+    transform: translateX(30px);
+}
+.dash-q.ng-enter.ng-enter-active {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.dash-q.ng-leave {
+    transition: 0.2s linear all;
+    opacity: 1;
+    transform: translateX(0px);
+}
+.dash-q.ng-leave.ng-leave-active {
+    opacity: 1;
+    transform: translateX(-100%);
+}
